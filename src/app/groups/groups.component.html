@@ -1,16 +1,20 @@
 <div class="header">
     <h1>Mundial da FIFA 2025</h1>
-  </div>
-  
-  <div class="group-container">
+</div>
+
+<div class="group-container">
     <div class="group" *ngFor="let group of groups">
-      <div class="group-title">{{ group.name }}</div>
-      <div cdkDropList [cdkDropListData]="group.teams" (cdkDropListDropped)="drop($event)">
-        <div class="team" *ngFor="let team of group.teams" cdkDrag>
-          <img [src]="team.imagem" alt="{{ team.name }} escudo" class="team-shield">
-          {{ team.name }}
+        <div class="group-title">{{ group.name }}</div>
+        <div cdkDropList [cdkDropListData]="group.teams" (cdkDropListDropped)="drop($event)">
+            <div class="team" *ngFor="let team of group.teams" cdkDrag>
+                <img [src]="team.imagem" alt="{{ team.name }} escudo" class="team-shield">
+                {{ team.name }}
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  
+</div>
+
+<div *ngIf="roundOf16Matches.length">
+    <app-knockout-stage [roundOf16Matches]="roundOf16Matches" [quarterFinalsMatches]="quarterFinalsMatches"
+        [semiFinalsMatches]="semiFinalsMatches" [finalMatch]="finalMatch" [champion]="champion"></app-knockout-stage>
+</div>

@@ -1,0 +1,112 @@
+.knockout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.match {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  padding: 15px 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.match:hover {
+  transform: scale(1.05);
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+}
+
+.team img {
+  width: 40px;
+  height: 40px;
+  
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+.team:hover img {
+  transform: rotate(360deg);
+}
+
+.team.selected {
+  background: linear-gradient(90deg, #00ff7f, #7fff00);
+  border-radius: 4px;
+}
+.vs {
+  font-weight: bold;
+  color: #005cbf;
+}
+
+.advance-button {
+  background-color: #005cbf;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+
+.advance-button:hover {
+  background-color: #0041a3;
+}
+
+.champion-container {
+  position: relative;
+}
+
+.champion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.champion img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+
+.fireworks {
+  width: 100px;
+  height: 100px;
+  background: url('firework.gif') no-repeat center center;
+  background-size: cover;
+  animation: showFireworks 10s ease-in-out;
+}
+
+@keyframes showFireworks {
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

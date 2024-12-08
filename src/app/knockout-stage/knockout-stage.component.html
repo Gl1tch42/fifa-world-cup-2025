@@ -1,0 +1,71 @@
+<div class="knockout-container">
+  <h2>Oitavas de Final</h2>
+  <div class="match" *ngFor="let match of roundOf16Matches">
+    <div class="team" [class.selected]="match.winner === match.team1" (click)="selectWinner(match, match.team1, 'roundOf16')">
+      <img [src]="match.team1.imagem" alt="{{ match.team1.name }} escudo">
+      {{ match.team1.name }}
+    </div>
+    <div class="vs">vs</div>
+    <div class="team" [class.selected]="match.winner === match.team2" (click)="selectWinner(match, match.team2, 'roundOf16')">
+      <img [src]="match.team2.imagem" alt="{{ match.team2.name }} escudo">
+      {{ match.team2.name }}
+    </div>
+  </div>
+  <button class="advance-button" (click)="advanceToQuarterFinals()">Mostrar Quartas de Final</button>
+
+  <h2>Quartas de Final</h2>
+  <div class="match" *ngFor="let match of quarterFinalsMatches">
+    <div class="team" [class.selected]="match.winner === match.team1" (click)="selectWinner(match, match.team1, 'quarterFinals')">
+      <img [src]="match.team1.imagem" alt="{{ match.team1.name }} escudo">
+      {{ match.team1.name }}
+    </div>
+    <div class="vs">vs</div>
+    <div class="team" [class.selected]="match.winner === match.team2" (click)="selectWinner(match, match.team2, 'quarterFinals')">
+      <img [src]="match.team2.imagem" alt="{{ match.team2.name }} escudo">
+      {{ match.team2.name }}
+    </div>
+  </div>
+  <button class="advance-button" (click)="advanceToSemiFinals()">Mostrar Semifinais</button>
+
+  <h2>Semifinais</h2>
+  <div class="match" *ngFor="let match of semiFinalsMatches">
+    <div class="team" [class.selected]="match.winner === match.team1" (click)="selectWinner(match, match.team1, 'semiFinals')">
+      <img [src]="match.team1.imagem" alt="{{ match.team1.name }} escudo">
+      {{ match.team1.name }}
+    </div>
+    <div class="vs">vs</div>
+    <div class="team" [class.selected]="match.winner === match.team2" (click)="selectWinner(match, match.team2, 'semiFinals')">
+      <img [src]="match.team2.imagem" alt="{{ match.team2.name }} escudo">
+      {{ match.team2.name }}
+    </div>
+  </div>
+  <button class="advance-button" (click)="advanceToFinal()">Mostrar Final</button>
+
+  <h2 *ngIf="finalMatch.team1.name != ''">Final</h2>
+  <div *ngIf="finalMatch.team1.name != ''" class="match">
+    <div class="team" [class.selected]="finalMatch.winner === finalMatch.team1" (click)="selectWinner(finalMatch, finalMatch.team1, 'final');showChampion()">
+      <img [src]="finalMatch.team1.imagem" alt="{{ finalMatch.team1.name }} escudo">
+      {{ finalMatch.team1.name }}
+    </div>
+    <div class="vs">vs</div>
+    <div class="team" [class.selected]="finalMatch.winner === finalMatch.team2" (click)="selectWinner(finalMatch, finalMatch.team2, 'final');showChampion()">
+      <img [src]="finalMatch.team2.imagem" alt="{{ finalMatch.team2.name }} escudo">
+      {{ finalMatch.team2.name }}
+    </div>
+  </div>
+
+  <div *ngIf="champion.name != ''">
+    <h2>Parabéns ao Campeão da Copa do Mundo de Clubes da FIFA 2025!</h2>
+    <div>
+      <!-- <div style="left: 0%;" class="fireworks"></div>
+      <div style="left: 20%;" class="fireworks"></div> -->
+      <div class="champion">
+        <img [src]="champion.imagem" alt="{{ champion.name }} escudo">
+        <h1>{{ champion.name }}</h1>
+      </div>
+      <!-- <div style="left: 80%;" class="fireworks"></div>
+      <div style="left: 100%;" class="fireworks"></div> -->
+    </div>
+  
+  </div>
+</div>

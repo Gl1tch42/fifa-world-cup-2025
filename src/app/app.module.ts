@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { GroupsComponent } from './groups/groups.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { KnockoutStageComponent } from './knockout-stage/knockout-stage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GroupsComponent
+    GroupsComponent,
+    KnockoutStageComponent
   ],
   imports: [
     BrowserModule,
